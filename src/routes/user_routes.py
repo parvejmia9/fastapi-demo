@@ -70,7 +70,7 @@ async def logout_user(
             session_token=session_token, session=session
         )
         if response:
-            response.delete_cookie(key="session_token")
+            response.delete_cookie(key="cur_user")
         return {"message": "Logged Out Successfully"}
     except:
         raise HTTPException(
